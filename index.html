@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>KMB Route 91M Bus Tracker</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <div class="logo">
+          <div class="logo-circle">KMB</div>
+          <div>Real-time Bus Information</div>
+        </div>
+        <h1>KMB Route 91M Bus Tracker</h1>
+        <p>Through Hong Kong University of Science and Technology</p>
+
+        <div class="route-info">
+          <div class="route-number">91M</div>
+          <div class="destination">
+            <div>HKUST - Po Lam / Diamond Hill</div>
+            <span>香港科技大學 - 寶林 / 鑽石山</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="tabs">
+        <button class="tab active" id="toPoLamTab" data-direction="polam">
+          <i class="fas fa-bus"></i> To Po Lam (寶林)
+        </button>
+        <button class="tab" id="toDiamondHillTab" data-direction="diamondhill">
+          <i class="fas fa-bus"></i> To Diamond Hill (鑽石山)
+        </button>
+      </div>
+
+      <div class="filter-info">
+        <i class="fas fa-filter"></i>
+        <span id="directionInfo">Showing buses to PO LAM</span>
+      </div>
+
+      <div class="controls">
+        <button class="refresh-btn" id="refreshBtn">
+          <i class="fas fa-sync-alt"></i> Refresh Times
+        </button>
+        <div class="last-updated">
+          <i class="fas fa-clock"></i>
+          <span id="lastUpdated">Never updated</span>
+        </div>
+      </div>
+
+      <div class="stops-container" id="stopsContainer">
+        <!-- Stop cards will be inserted here by JavaScript -->
+      </div>
+
+      <div class="footer">
+        <p>
+          Data provided by Hong Kong Transport Department | Real-time KMB Bus ETA
+        </p>
+        <p>© 2023 KMB Bus Tracker | Route 91M through HKUST</p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
