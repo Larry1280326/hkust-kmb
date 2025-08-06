@@ -61,8 +61,21 @@ header p {
     display: flex;
     justify-content: center;
     gap: 15px;
-    margin: 25px 0 10px;
+    margin: 25px 0 15px; /* Increased bottom margin */
     flex-wrap: wrap;
+    position: relative;
+}
+
+/* Horizontal divider between route tabs and direction tabs */
+.route-tabs::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 1px;
 }
 
 .route-tab {
@@ -127,7 +140,7 @@ header p {
     display: flex;
     justify-content: center;
     gap: 10px;
-    margin: 15px 0 20px;
+    margin: 20px 0 20px; /* Adjusted margin */
     flex-wrap: wrap;
 }
 
@@ -444,5 +457,11 @@ header p {
         width: 100%;
         border-radius: 30px;
         margin-bottom: 5px;
+    }
+    
+    /* Adjust divider for mobile */
+    .route-tabs::after {
+        left: 10%;
+        width: 80%;
     }
 }
