@@ -245,7 +245,7 @@ async function fetchStopEta(stopId, route, config) {
     try {
         // Minibus uses different API endpoint
         if (config.minibus) {
-            const response = await fetch(`https://corsproxy.io/?https://data.etagmb.gov.hk/eta/stop/${stopId}`);
+            const response = await fetch(`https://data.etagmb.gov.hk/eta/stop/${stopId}`);
             
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
