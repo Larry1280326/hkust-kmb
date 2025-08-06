@@ -1,67 +1,96 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>KMB Route 91M Bus Tracker</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Tracker: KMB 91M/91/91P & Minibus 11 through HKUST</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="route-91m">
     <div class="container">
-      <header>
-        <div class="logo">
-          <div class="logo-circle">KMB</div>
-          <div>Real-time Bus Information</div>
+        <header>
+            <h1>Bus Tracker</h1>
+            <p>KMB Routes 91M, 91 & 91P, Minibus Route 11 through Hong Kong University of Science and Technology</p>
+        </header>
+        
+        <div class="route-tabs">
+            <button class="route-tab route-91m active" id="route91mTab">
+                <i class="fas fa-bus bus-icon"></i> KMB 91M
+            </button>
+            <button class="route-tab route-91" id="route91Tab">
+                <i class="fas fa-bus bus-icon"></i> KMB 91
+            </button>
+            <button class="route-tab route-91p" id="route91pTab">
+                <i class="fas fa-bus bus-icon"></i> KMB 91P
+            </button>
+            <button class="route-tab route-11" id="route11Tab">
+                <i class="fas fa-shuttle-van bus-icon"></i> Minibus 11
+            </button>
         </div>
-        <h1>KMB Route 91M Bus Tracker</h1>
-        <p>Through Hong Kong University of Science and Technology</p>
-
-        <div class="route-info">
-          <div class="route-number">91M</div>
-          <div class="destination">
-            <div>HKUST - Po Lam / Diamond Hill</div>
-            <span>香港科技大學 - 寶林 / 鑽石山</span>
-          </div>
+        
+        <div class="tabs-container">
+            <div class="tabs route-91m" id="directionTabs91m">
+                <button class="tab active" id="toPoLamTab" data-direction="polam">
+                    <i class="fas fa-arrow-right"></i> To Po Lam
+                </button>
+                <button class="tab" id="toDiamondHillTab" data-direction="diamondhill">
+                    <i class="fas fa-arrow-left"></i> To Diamond Hill
+                </button>
+            </div>
+            
+            <div class="tabs route-91" id="directionTabs91" style="display:none">
+                <button class="tab active" id="toClearWaterBayTab" data-direction="clearwaterbay">
+                    <i class="fas fa-arrow-right"></i> To Clear Water Bay
+                </button>
+                <button class="tab" id="toDiamondHill91Tab" data-direction="diamondhill91">
+                    <i class="fas fa-arrow-left"></i> To Diamond Hill
+                </button>
+            </div>
+            
+            <div class="tabs route-91p" id="directionTabs91p" style="display:none">
+                <button class="tab active" id="toHkustNorthTab" data-direction="hkustnorth">
+                    <i class="fas fa-arrow-right"></i> To HKUST (North)
+                </button>
+                <button class="tab" id="toPingShekTab" data-direction="pingshek">
+                    <i class="fas fa-arrow-left"></i> To Ping Shek / Choi Hung Station
+                </button>
+            </div>
+            
+            <div class="tabs route-11" id="directionTabs11" style="display:none">
+                <button class="tab active" id="toHangHauTab" data-direction="tohanghau">
+                    <i class="fas fa-arrow-right"></i> To Hang Hau Village
+                </button>
+                <button class="tab" id="toChoiHungTab" data-direction="tochoihung">
+                    <i class="fas fa-arrow-left"></i> To Choi Hung
+                </button>
+            </div>
         </div>
-      </header>
-
-      <div class="tabs">
-        <button class="tab active" id="toPoLamTab" data-direction="polam">
-          <i class="fas fa-bus"></i> To Po Lam (寶林)
-        </button>
-        <button class="tab" id="toDiamondHillTab" data-direction="diamondhill">
-          <i class="fas fa-bus"></i> To Diamond Hill (鑽石山)
-        </button>
-      </div>
-
-      <div class="filter-info">
-        <i class="fas fa-filter"></i>
-        <span id="directionInfo">Showing buses to PO LAM</span>
-      </div>
-
-      <div class="controls">
-        <button class="refresh-btn" id="refreshBtn">
-          <i class="fas fa-sync-alt"></i> Refresh Times
-        </button>
-        <div class="last-updated">
-          <i class="fas fa-clock"></i>
-          <span id="lastUpdated">Never updated</span>
+        
+        <div class="filter-info">
+            <i class="fas fa-filter"></i>
+            <span id="directionInfo">Showing buses to PO LAM</span>
         </div>
-      </div>
-
-      <div class="stops-container" id="stopsContainer">
-        <!-- Stop cards will be inserted here by JavaScript -->
-      </div>
-
-      <div class="footer">
-        <p>
-          Data provided by Hong Kong Transport Department | Real-time KMB Bus ETA
-        </p>
-        <p>© 2023 KMB Bus Tracker | Route 91M through HKUST</p>
-      </div>
+        
+        <div class="controls">
+            <button class="refresh-btn" id="refreshBtn">
+                <i class="fas fa-sync-alt"></i> Refresh Times
+            </button>
+            <div class="last-updated">
+                <i class="fas fa-clock"></i>
+                <span id="lastUpdated">Never updated</span>
+            </div>
+        </div>
+        
+        <div class="stops-container" id="stopsContainer">
+            <!-- Stop cards will be inserted here by JavaScript -->
+        </div>
+        
+        <div class="footer">
+            <p>Data provided by data.gov.hk | Real-time ETA</p>
+        </div>
     </div>
 
     <script src="script.js"></script>
-  </body>
+</body>
 </html>
