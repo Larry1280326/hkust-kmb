@@ -24,8 +24,8 @@ const STOPS_CONFIG = {
       },
       {
         id: "2EFDB1EADF5955E6",
-        name: "Ngau Chi Wan BBI",
-        ch_name: "牛池灣轉車站",
+        name: "Ngau Chi Wan BBI - Ngau Chi Wan Village",
+        ch_name: "牛池灣轉車站 - 牛池灣村",
       },
     ],
     directionInfo: "Showing buses to PO LAM",
