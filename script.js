@@ -84,7 +84,7 @@ const ROUTES_CONFIG = {
     '91P': {
         hkustnorth: {
             route: "91P",
-            destination: "HKUST (NORTH)",
+            destination: "H.K.U.S.T (NORTH)",
             direction: "O",
             stops: [
                 {
@@ -268,7 +268,7 @@ async function fetchStopEta(stopId, route, config) {
         }
         else {
             const response = await fetch(`https://data.etabus.gov.hk/v1/transport/kmb/eta/${stopId}/${route}/1`);
-            
+        
             if (!response.ok) {
                 throw new Error(`HTTP error! Status: ${response.status}`);
             }
